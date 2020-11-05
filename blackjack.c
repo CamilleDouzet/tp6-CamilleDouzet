@@ -29,13 +29,11 @@ int main(){
     afficheCarte(carte);
     */
 
-
     //--- Q4 Q5 : On remplit et affiche le jeu dans l'ordre
     /*t_jeu jeu;
     remplirJeu(jeu);
     afficheJeu(jeu);
     */
-
 
     //--- Q6 : On mélange le jeu et on l'affiche
     /*t_jeu jeu;
@@ -44,7 +42,6 @@ int main(){
     remplirJeu(jeu);
     permutationCarte(jeu,permu);
     afficheJeu(jeu);*/
-
 
     //---Q8 Q9 : On initialise une partie et on distribue les cartes aux joueurs
     /*t_partie *partie;
@@ -58,6 +55,8 @@ int main(){
     char joueur1[20]="Camille";
     char joueur2[20]="Ordi"; 
     initPartie(partie,joueur1,joueur2);
+    int permu = 1728;
+    permutationCarte(partie->pioche,permu);
     printf("-------------------------\n");
     printf("Voici la pioche :\n");
     afficheJeu(partie->pioche); // affiche la pioche
@@ -68,9 +67,11 @@ int main(){
     printf("\n-------------------------\n");
     printf("Main de %s :",joueur1);
     afficheMain(partie->mainH);
+    calculMain(partie->mainH);
     printf("\n-------------------------\n");
     printf("Main de %s :",joueur2);
     afficheMain(partie->mainO);
+    calculMain(partie->mainO);
     printf("\n-------------------------\n");
     return 0;
 }

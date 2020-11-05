@@ -73,3 +73,28 @@ void afficheMain(t_main main){
         afficheJeu(main.jeu);
     }
 }
+/* Question 11 Fonction calculMain 
+BUT : Calculer la meilleure valeur d'une main :
+        As vaut 1 sauf cas particulier :
+        /!\ si la main vaut moins de 11 mais qu'il y a un as alors l'as vaut 11
+Parametre :
+- main : de type t_main
+*/
+int calculMain(t_main main){
+    int valMain = 0;
+    int nombre_as =0;
+    //on parcourt toute les carte de la main
+    for(int i=0;i<(main.n_carte);i++){
+        valMain+=main.jeu[i].carte;
+        if (main.jeu[i].carte==1){
+            nombre_as=1;
+        }
+    }
+    // Traitement du cas particulier
+    if((valMain<11) && (nombre_as==1)){
+        valMain+=10;
+    }
+
+    printf(" Valeur de la main :%d",valMain);
+    return valMain;
+}
