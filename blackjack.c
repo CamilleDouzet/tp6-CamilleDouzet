@@ -50,7 +50,7 @@ int main(){
     initPartie(partie,joueur1,joueur2);
     distribCarte(partie,1);*/
 
-    //--- Q10 : Creation d'une partie + pioche etc
+    //--- Q10 Q11: Creation d'une partie + pioche etc
     t_partie *partie;
     char joueur1[20]="Camille";
     char joueur2[20]="Ordi"; 
