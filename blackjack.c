@@ -52,5 +52,25 @@ int main(){
     char joueur2[20]="Prenom2"; 
     initPartie(partie,joueur1,joueur2);
     distribCarte(partie,1);*/
+
+    //--- Q10 : Creation d'une partie + pioche etc
+    t_partie *partie;
+    char joueur1[20]="Camille";
+    char joueur2[20]="Ordi"; 
+    initPartie(partie,joueur1,joueur2);
+    printf("-------------------------\n");
+    printf("Voici la pioche :\n");
+    afficheJeu(partie->pioche); // affiche la pioche
+    distribCarte(partie,1); //carte 1 à l'humain
+    distribCarte(partie,0); //carte 2 à l'ordi
+    distribCarte(partie,1); //carte 3 à l'humain
+    distribCarte(partie,0); //carte 4 à l'ordi
+    printf("\n-------------------------\n");
+    printf("Main de %s :",joueur1);
+    afficheMain(partie->mainH);
+    printf("\n-------------------------\n");
+    printf("Main de %s :",joueur2);
+    afficheMain(partie->mainO);
+    printf("\n-------------------------\n");
     return 0;
 }

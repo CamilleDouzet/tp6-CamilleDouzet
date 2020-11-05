@@ -35,5 +35,6 @@ typedef struct {
 //Liste des prototypes :
 void initPartie(t_partie *partie, char joueur1[20], char joueur2[20]);
 void distribCarte(t_partie *partie, int quelJoueur);
+void afficheMain(t_main main);
 
 #endif

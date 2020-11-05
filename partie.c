@@ -51,7 +51,7 @@ Parametre :
 */
 void distribCarte(t_partie *partie, int quelJoueur){
     //Cas où on distribue à l'humain
-    if(quelJoueur){
+    if(quelJoueur==1){
         partie->mainH.jeu[partie->mainH.n_carte] = partie->pioche[partie->posPioche]; // on attribue la carte de la pioche dans la main de joueur
         partie->mainH.n_carte++; //on augmente le nm de carte dans la main
     // Cas où on distribue à l'ordinateur
@@ -60,4 +60,16 @@ void distribCarte(t_partie *partie, int quelJoueur){
         partie->mainO.n_carte++;
     }
     partie->posPioche++; //on avance dans la pioche pour ne pas donner la meme carte
+}
+/* Question 10 Fonction afficheMain
+BUT : afficher la mair d'un joueur
+Parametre :
+- main : de type t_main*/
+void afficheMain(t_main main){
+    //On affiche toutes les cartes d'une main 
+    //Problème ça affiche (nombre de carte distribué) fois la main
+    //si on enlève le for probleme de segmentation mais affiche la main qu'une seule fois
+    for(int i=0;i<(main.n_carte);i++){
+        afficheJeu(main.jeu);
+    }
 }
