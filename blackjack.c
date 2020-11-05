@@ -50,28 +50,54 @@ int main(){
     initPartie(partie,joueur1,joueur2);
     distribCarte(partie,1);*/
 
-    //--- Q10 Q11: Creation d'une partie + pioche etc
-    t_partie *partie;
+    //--- Q10 Q11 Q12: Creation d'une partie + pioche etc
+    //malloc pour enlever un warning
+    t_partie *partie = malloc(sizeof(*partie));
     char joueur1[20]="Camille";
-    char joueur2[20]="Ordi"; 
+    char joueur2[20]="Ordi";
+
+    //initialisation partie
     initPartie(partie,joueur1,joueur2);
-    int permu = 1728;
+
+    //pour changer la pioche initiale pour tester diff cas
+    int permu = 1211;
     permutationCarte(partie->pioche,permu);
+
+    //affichage pioche
     printf("-------------------------\n");
     printf("Voici la pioche :\n");
-    afficheJeu(partie->pioche); // affiche la pioche
+    afficheJeu(partie->pioche);
+
+    //distribution des cartes de départ
     distribCarte(partie,1); //carte 1 à l'humain
     distribCarte(partie,0); //carte 2 à l'ordi
     distribCarte(partie,1); //carte 3 à l'humain
     distribCarte(partie,0); //carte 4 à l'ordi
+
+    //affichage des mains
     printf("\n-------------------------\n");
     printf("Main de %s :",joueur1);
     afficheMain(partie->mainH);
-    calculMain(partie->mainH);
     printf("\n-------------------------\n");
     printf("Main de %s :",joueur2);
     afficheMain(partie->mainO);
-    calculMain(partie->mainO);
     printf("\n-------------------------\n");
+    
+    //Algorithme Question 12
+    char reponse;
+    printf("Nouvelle carte ? (o/n)");
+    scanf("%s",&reponse);
+    while(reponse=='o' && calculMain(partie->mainH)<=21){
+        distribCarte(partie,1);
+        printf("\nMain de %s :",joueur1);
+        afficheMain(partie->mainH);
+        printf("\n-------------------------\n");
+        if (calculMain(partie->mainH)<=21){
+            printf("\nNouvelle carte ? (o/n)");
+            scanf("%s",&reponse);
+        }
+    }
+
+    free(partie);
     return 0;
 }
