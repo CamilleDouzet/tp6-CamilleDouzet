@@ -7,7 +7,7 @@ LIBS = -lm
 LIBSDIR = 
 
 # fichiers du projet
-SRC = blackjack.c carte.c
+SRC = blackjack.c carte.c partie.c
 OBJ = $(SRC:.c=.o)
 EXEC = run.out
 
@@ -16,8 +16,9 @@ EXEC = run.out
 all: $(EXEC)
 
 # dépendance des .h
-blackjack.o: carte.h
+blackjack.o: carte.h partie.h
 carte.o: carte.h
+partie.o: carte.h partie.h
 # règles de compilation
 %.o: %.c
 	$(CC) $(CCFLAGS) -o $@ -c $<
