@@ -1,16 +1,17 @@
-/*
-TP6
-Auteur : Camille Douzet
-Date : 05/11
-*/
-
-
-// Ce fichier contient les structures et les prototypes
-/* POUR COMPILER :
-make 
-OU
-gcc -c complex.c exo1.c
-gcc  exo1.o -o ex -lm 
+/*=========================================
+*
+* oO  Gestion des Cartes et d'un Jeu  Oo
+*
+*==========================================
+*
+* TP6
+* Date : 05.11.2020
+* Author : Douzet Camille
+*
+* Contient les structures  et les prototypes 
+* necessaires à la gestion d'un jeu de cartes
+* 
+*===========================================
 */
 
 #ifndef __CARTE_H__
@@ -35,4 +36,5 @@ void remplirJeu(t_jeu jeu);
 void afficheJeu(t_jeu jeu);
 
 void permutationCarte(t_jeu jeu, int permu);
+
 #endif

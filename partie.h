@@ -1,9 +1,18 @@
-/*
-TP6
-Auteur : Camille Douzet
-Date : 05/11
+/*=========================================
+*
+* oO  Gestion des Parties de Blackjack  Oo
+*
+*==========================================
+*
+* TP6
+* Date : 05.11.2020
+* Author : Douzet Camille
+*
+* Contient les structures  et les prototypes 
+* necessaires à la création d'une partie
+* 
+*===========================================
 */
-
 
 #ifndef __PARTIE_H__
 #define __PARTIE_H__
@@ -23,11 +32,7 @@ typedef struct {
     int posPioche;
 } t_partie;
 
-//Question 8
-typedef char t_joueur[20];
-
 //Liste des prototypes :
-//question 8
 void initPartie(t_partie *partie, char joueur1[20], char joueur2[20]);
 void distribCarte(t_partie *partie, int quelJoueur);
 
