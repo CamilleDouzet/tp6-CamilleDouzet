@@ -28,7 +28,7 @@ typedef char t_joueur[20];
 
 //Liste des prototypes :
 //question 8
-void initPartie(t_partie partie, char joueur1[20], char joueur2[20]);
-void distribCarte(t_partie partie, int quelJoueur);
+void initPartie(t_partie *partie, char joueur1[20], char joueur2[20]);
+void distribCarte(t_partie *partie, int quelJoueur);
 
 #endif

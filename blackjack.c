@@ -26,7 +26,7 @@ int main(){
     //permutationCarte(jeu,permu);
     //afficheJeu(jeu);
     //---MAin question 9
-    t_partie partie;
+    t_partie *partie;
     char joueur1[20]="shclqskjc";
     char joueur2[20]="jqgvjqsvcj"; 
     initPartie(partie,joueur1,joueur2);
