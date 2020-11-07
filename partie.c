@@ -67,10 +67,10 @@ Parametre :
 - main : de type t_main*/
 void afficheMain(t_main main){
     //On affiche toutes les cartes d'une main 
-    //Problème ça affiche (nombre de carte distribué) fois la main
-    //si on enlève le for probleme de segmentation mais affiche la main qu'une seule fois
-    for(int i=0;i<(main.n_carte);i++){
-        afficheJeu(main.jeu);
+    t_carte c;
+    for(int i=0; i<main.n_carte; i++){
+        c = main.jeu[i];
+        afficheCarte(c);
     }
 }
 /* Question 11 Fonction calculMain 
